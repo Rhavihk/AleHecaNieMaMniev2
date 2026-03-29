@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LoginPage from "@/pages/LoginPage";
@@ -48,7 +48,7 @@ function App() {
   return (
     <LanguageProvider>
       <div className="app-container">
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/auth/callback" element={<AuthCallback />} />
@@ -70,7 +70,7 @@ function App() {
             />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
         <Toaster position="top-right" theme="dark" />
       </div>
     </LanguageProvider>
