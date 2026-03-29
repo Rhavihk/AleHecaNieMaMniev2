@@ -1,0 +1,226 @@
+/* TimeAway - Diablo Immortal Theme */
+
+.app-container {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, #1a0f0a 0%, #0d0805 50%, #050302 100%);
+}
+
+/* Login background - dark hellish */
+.login-bg {
+    background: 
+        radial-gradient(ellipse at bottom, rgba(139, 37, 0, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at top right, rgba(218, 165, 32, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, #0a0705 0%, #150c08 50%, #0a0705 100%);
+    background-attachment: fixed;
+}
+
+.login-overlay {
+    background: radial-gradient(ellipse at center, rgba(20, 12, 8, 0.7) 0%, rgba(5, 3, 2, 0.95) 100%);
+}
+
+/* Sidebar styles - stone/dark metal look */
+.sidebar {
+    background: linear-gradient(180deg, #0f0a07 0%, #0a0705 50%, #050302 100%);
+    border-right: 1px solid rgba(139, 69, 19, 0.3);
+    box-shadow: inset -10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded transition-all duration-200 cursor-pointer;
+    color: #8B7355;
+    font-family: 'Crimson Text', serif;
+}
+
+.sidebar-item:hover {
+    background: linear-gradient(90deg, rgba(139, 69, 19, 0.2) 0%, transparent 100%);
+    color: #DAA520;
+}
+
+.sidebar-item.active {
+    background: linear-gradient(90deg, rgba(226, 88, 34, 0.3) 0%, transparent 100%);
+    color: #FF6B35;
+    border-left: 2px solid #E25822;
+}
+
+/* Calendar grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.calendar-header-cell {
+    @apply text-center py-3 text-sm font-semibold uppercase tracking-wider;
+    color: #DAA520;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+.calendar-cell {
+    @apply min-h-[120px] rounded p-2 transition-all duration-200 cursor-pointer;
+    background: linear-gradient(180deg, rgba(15, 10, 7, 0.9) 0%, rgba(8, 5, 3, 0.95) 100%);
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.calendar-cell:hover {
+    border-color: rgba(218, 165, 32, 0.4);
+    background: linear-gradient(180deg, rgba(25, 15, 10, 0.9) 0%, rgba(12, 8, 5, 0.95) 100%);
+}
+
+.calendar-cell.today {
+    border-color: #CD853F;
+    box-shadow: 0 0 15px rgba(205, 133, 63, 0.2), inset 0 0 20px rgba(205, 133, 63, 0.05);
+}
+
+.calendar-cell.other-month {
+    opacity: 0.35;
+}
+
+.calendar-cell.selecting {
+    background: linear-gradient(180deg, rgba(226, 88, 34, 0.2) 0%, rgba(139, 37, 0, 0.2) 100%);
+    border-color: #E25822;
+    box-shadow: 0 0 10px rgba(226, 88, 34, 0.3);
+}
+
+.calendar-cell-date {
+    @apply text-sm font-medium;
+    color: #C4A77D;
+    font-family: 'Cinzel', serif;
+}
+
+.calendar-cell-date.today {
+    @apply w-7 h-7 rounded-full flex items-center justify-center;
+    background: linear-gradient(180deg, #DAA520 0%, #8B6914 100%);
+    color: #0a0705;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+}
+
+/* Absence chips in calendar */
+.absence-chip {
+    @apply text-xs px-2 py-0.5 rounded truncate mt-1 cursor-pointer transition-all;
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+}
+
+.absence-chip:hover {
+    transform: scale(1.02);
+}
+
+/* Avatar fallback */
+.avatar-fallback {
+    @apply flex items-center justify-center font-bold uppercase;
+    background: linear-gradient(180deg, #8B4513 0%, #5C2E0A 100%);
+    color: #FFD700;
+    font-family: 'Cinzel', serif;
+}
+
+/* Modal animations */
+.modal-enter {
+    animation: modalEnter 0.3s ease-out;
+}
+
+@keyframes modalEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Diablo-style primary button */
+.btn-primary-diablo {
+    background: linear-gradient(180deg, #E25822 0%, #8B2500 100%);
+    border: 1px solid #CD853F;
+    color: white;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+}
+
+.btn-primary-diablo:hover {
+    background: linear-gradient(180deg, #FF6B35 0%, #CD4500 100%);
+    box-shadow: 0 0 25px rgba(226, 88, 34, 0.6);
+    transform: translateY(-1px);
+}
+
+.btn-primary-diablo:active {
+    transform: translateY(0);
+}
+
+/* Input dark Diablo style */
+.input-dark {
+    background: rgba(10, 7, 5, 0.9);
+    border: 1px solid rgba(139, 69, 19, 0.4);
+    color: #C4A77D;
+    font-family: 'Crimson Text', serif;
+}
+
+.input-dark:focus {
+    border-color: #DAA520;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.2);
+    outline: none;
+}
+
+.input-dark::placeholder {
+    color: rgba(139, 115, 85, 0.5);
+}
+
+/* Status badges - Diablo style */
+.status-away {
+    background: linear-gradient(180deg, rgba(226, 88, 34, 0.3) 0%, rgba(139, 37, 0, 0.3) 100%);
+    color: #FF6B35;
+    border: 1px solid rgba(226, 88, 34, 0.4);
+}
+
+.status-active {
+    background: linear-gradient(180deg, rgba(34, 139, 34, 0.3) 0%, rgba(20, 80, 20, 0.3) 100%);
+    color: #32CD32;
+    border: 1px solid rgba(34, 139, 34, 0.4);
+}
+
+/* Card styling */
+.diablo-card {
+    background: linear-gradient(180deg, rgba(15, 10, 7, 0.95) 0%, rgba(8, 5, 3, 0.98) 100%);
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(218, 165, 32, 0.05);
+}
+
+/* Decorative corner accents */
+.corner-accent {
+    position: relative;
+}
+
+.corner-accent::before,
+.corner-accent::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+}
+
+.corner-accent::before {
+    top: -1px;
+    left: -1px;
+    border-top-color: #8B4513;
+    border-left-color: #8B4513;
+}
+
+.corner-accent::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-color: #8B4513;
+    border-right-color: #8B4513;
+}
+
+/* Skull/demon decorative divider could be added via SVG */
+.demon-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8B4513, #DAA520, #8B4513, transparent);
+    margin: 1rem 0;
+}

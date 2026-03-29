@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Crimson+Text:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Diablo Immortal Dark Theme */
+        --background: 0 0% 5%;
+        --foreground: 38 30% 85%;
+        --card: 0 0% 8%;
+        --card-foreground: 38 30% 90%;
+        --popover: 0 0% 7%;
+        --popover-foreground: 38 30% 85%;
+        --primary: 15 90% 50%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 12%;
+        --secondary-foreground: 38 30% 85%;
+        --muted: 0 0% 10%;
+        --muted-foreground: 38 15% 55%;
+        --accent: 38 70% 45%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 85% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --success: 120 40% 35%;
+        --success-foreground: 0 0% 100%;
+        --warning: 38 90% 50%;
+        --warning-foreground: 0 0% 0%;
+        --border: 0 0% 15%;
+        --input: 0 0% 12%;
+        --ring: 15 90% 50%;
+        --radius: 0.25rem;
+        --chart-1: 15 90% 50%;
+        --chart-2: 38 70% 45%;
+        --chart-3: 0 85% 45%;
+        --chart-4: 120 40% 35%;
+        --chart-5: 280 50% 40%;
+    }
+
+    .dark {
+        --background: 0 0% 5%;
+        --foreground: 38 30% 85%;
+        --card: 0 0% 8%;
+        --card-foreground: 38 30% 90%;
+        --popover: 0 0% 7%;
+        --popover-foreground: 38 30% 85%;
+        --primary: 15 90% 50%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 12%;
+        --secondary-foreground: 38 30% 85%;
+        --muted: 0 0% 10%;
+        --muted-foreground: 38 15% 55%;
+        --accent: 38 70% 45%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 85% 45%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 15%;
+        --input: 0 0% 12%;
+        --ring: 15 90% 50%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    
+    html {
+        @apply dark;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Crimson Text', Georgia, serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Cinzel', serif;
+        letter-spacing: 0.05em;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
+
+/* Custom scrollbar - Diablo themed */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8B4513 0%, #5C2E0A 100%);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #CD853F 0%, #8B4513 100%);
+}
+
+/* Diablo-style glow effects */
+.fire-glow {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.3), 0 0 40px rgba(255, 50, 0, 0.1);
+}
+
+.gold-glow {
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.3);
+}
+
+/* Calendar styling */
+.calendar-day {
+    @apply relative min-h-[100px] p-1 border rounded transition-all duration-200;
+    border-color: rgba(139, 69, 19, 0.3);
+    background: linear-gradient(180deg, rgba(20, 15, 10, 0.9) 0%, rgba(10, 8, 5, 0.95) 100%);
+}
+
+.calendar-day:hover {
+    border-color: rgba(218, 165, 32, 0.5);
+    background: linear-gradient(180deg, rgba(30, 20, 10, 0.9) 0%, rgba(15, 10, 5, 0.95) 100%);
+}
+
+.calendar-day.today {
+    border-color: #CD853F;
+    box-shadow: 0 0 10px rgba(205, 133, 63, 0.3);
+}
+
+.calendar-day.selecting {
+    background: linear-gradient(180deg, rgba(139, 69, 19, 0.3) 0%, rgba(90, 40, 10, 0.3) 100%);
+    border-color: #E25822;
+}
+
+/* Absence chips */
+.absence-chip {
+    @apply text-xs px-2 py-0.5 rounded truncate mt-1 cursor-pointer;
+    font-family: 'Crimson Text', serif;
+}
+
+/* Glass card with Diablo theme */
+.glass-card {
+    background: linear-gradient(180deg, rgba(20, 15, 10, 0.95) 0%, rgba(10, 8, 5, 0.98) 100%);
+    border: 1px solid rgba(139, 69, 19, 0.4);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(218, 165, 32, 0.1);
+}
+
+/* Ornate border decoration */
+.ornate-border {
+    position: relative;
+}
+
+.ornate-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #DAA520, transparent);
+}
+
+.ornate-border::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8B4513, transparent);
+}
+
+/* Animation classes */
+@keyframes fireFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fire {
+    animation: fireFlicker 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Button glow on hover */
+.btn-diablo {
+    background: linear-gradient(180deg, #E25822 0%, #8B2500 100%);
+    border: 1px solid #CD853F;
+    transition: all 0.2s ease;
+}
+
+.btn-diablo:hover {
+    background: linear-gradient(180deg, #FF6B35 0%, #CD4500 100%);
+    box-shadow: 0 0 20px rgba(226, 88, 34, 0.5);
+}
+
+.btn-gold {
+    background: linear-gradient(180deg, #DAA520 0%, #8B6914 100%);
+    border: 1px solid #FFD700;
+    color: #000;
+}
+
+.btn-gold:hover {
+    background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+}

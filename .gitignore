@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+functions/node_modules/
+
+# Build
+build/
+
+# Environment (NEVER commit this!)
+.env.local
+.env
+
+# Firebase
+.firebase/
+*.cache
+
+# OS
+.DS_Store

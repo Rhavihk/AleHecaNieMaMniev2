@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Settings readable by all (password check happens in JS), not writable via rules
+    match /config/settings {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // One-time auth tokens written by Cloud Function, consumed by frontend
+    match /auth_tokens/{token} {
+      allow read, delete: if true;
+      allow create: if false;
+    }
+
+    // Users — fully readable for moderator view
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Absences — fully readable, ownership enforced in JS
+    match /absences/{absenceId} {
+      allow read, create, update, delete: if true;
+    }
+  }
+}
