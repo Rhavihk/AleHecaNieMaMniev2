@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/AleHecaNieMaMniev2/static/css/main.44d0bf8c.css",
+    "main.css": "/AleHecaNieMaMniev2/static/css/main.13f0e8b0.css",
     "main.js": "/AleHecaNieMaMniev2/static/js/main.dec8ea6d.js",
     "index.html": "/AleHecaNieMaMniev2/index.html",
-    "main.44d0bf8c.css.map": "/AleHecaNieMaMniev2/static/css/main.44d0bf8c.css.map",
+    "main.13f0e8b0.css.map": "/AleHecaNieMaMniev2/static/css/main.13f0e8b0.css.map",
     "main.dec8ea6d.js.map": "/AleHecaNieMaMniev2/static/js/main.dec8ea6d.js.map"
   },
   "entrypoints": [
-    "static/css/main.44d0bf8c.css",
+    "static/css/main.13f0e8b0.css",
     "static/js/main.dec8ea6d.js"
   ]
 }
