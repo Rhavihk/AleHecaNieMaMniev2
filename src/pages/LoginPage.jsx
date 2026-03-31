@@ -143,8 +143,8 @@ export default function LoginPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <Label className="text-amber-200/80 font-cinzel text-sm">{t("clanId")}</Label>
-                      <Input type="text" placeholder={t("enterClanId")} value={guildId}
-                        onChange={(e) => setGuildId(e.target.value)} className="input-dark" data-testid="guild-id-input" />
+                      <Input type="text" value={guildId} readOnly disabled
+                        className="input-dark opacity-50 cursor-not-allowed select-none" data-testid="guild-id-input" />
                       <p className="text-xs text-amber-900/60 italic">{t("clanIdHint")}</p>
                     </div>
                     <Button onClick={handleDiscordLogin} className="w-full btn-primary-diablo flex items-center justify-center gap-2"
