@@ -67,10 +67,8 @@ export default function DashboardPage() {
 
   const handleDayClick = (date) => {
     if (!selectingDates) {
-      setSelectingDates(true);
-      setSelectedStartDate(date);
-      setSelectedEndDate(date);
-      toast.info(t("singleDayHint"));
+      // Blokada — kliknięcie dnia bez trybu zaznaczania nic nie robi
+      return;
     } else if (!selectedStartDate) {
       setSelectedStartDate(date);
       setSelectedEndDate(date);
@@ -298,10 +296,23 @@ export default function DashboardPage() {
         </div>
 
         {selectingDates && (
-          <div className="mb-4 p-3 rounded diablo-card border-orange-700/50">
-            <p className="text-sm text-orange-400 flex items-center gap-2 font-crimson">
-              <Clock className="w-4 h-4" />
-              {selectedStartDate ? `${t("startDate")}: ${format(selectedStartDate, "MMM d")} - ${t("clickEndDate")}` : t("clickStartDate")}
+          <div className="mb-4 p-4 rounded-lg border-2 border-orange-600/70 flex items-center gap-3"
+            style={{ background: "rgba(180,60,0,0.18)" }}>
+            <Clock className="w-5 h-5 text-orange-400 flex-shrink-0" />
+            <p className="text-base text-orange-300 font-cinzel tracking-wide">
+              {selectedStartDate
+                ? `${t("startDate")}: ${format(selectedStartDate, "MMM d")} — ${t("clickEndDate")}`
+                : t("clickStartDate")}
+            </p>
+          </div>
+        )}
+
+        {!selectingDates && (
+          <div className="mb-4 p-3 rounded-lg border border-amber-900/30 flex items-center gap-3"
+            style={{ background: "rgba(10,6,4,0.45)" }}>
+            <Swords className="w-4 h-4 text-amber-700 flex-shrink-0" />
+            <p className="text-sm text-amber-700/80 font-crimson italic">
+              Kliknij "Oznacz nieobecność" aby zaznaczyć dni na kalendarzu
             </p>
           </div>
         )}
@@ -319,6 +330,7 @@ export default function DashboardPage() {
               return (
                 <div key={index}
                   className={`calendar-cell ${!isCurrentMonth ? "other-month" : ""} ${isToday ? "today" : ""} ${isInSelection ? "selecting" : ""}`}
+                  style={{ cursor: selectingDates ? "pointer" : "default" }}
                   onClick={() => handleDayClick(date)} data-testid={`calendar-day-${format(date, "yyyy-MM-dd")}`}>
                   <div className={`calendar-cell-date ${isToday ? "today" : ""}`}>{format(date, "d")}</div>
                   <div className="mt-1 space-y-1">
