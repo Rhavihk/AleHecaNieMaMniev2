@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/TimeAway/static/css/main.50396563.css",
-    "main.js": "/TimeAway/static/js/main.2e43d222.js",
+    "main.js": "/TimeAway/static/js/main.b16512f7.js",
     "index.html": "/TimeAway/index.html",
     "main.50396563.css.map": "/TimeAway/static/css/main.50396563.css.map",
-    "main.2e43d222.js.map": "/TimeAway/static/js/main.2e43d222.js.map"
+    "main.b16512f7.js.map": "/TimeAway/static/js/main.b16512f7.js.map"
   },
   "entrypoints": [
     "static/css/main.50396563.css",
-    "static/js/main.2e43d222.js"
+    "static/js/main.b16512f7.js"
   ]
 }
